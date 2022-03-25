@@ -21,32 +21,32 @@
         }
         return list;
     }
-    public void PrintNums()
+    public string PrintNums()
     {
+        string numString = "";
         foreach (int i in baseRoll)
           
             {
                 if (i < 10)
                 {
-                    Console.Write($"  {i}");
+                    numString += $"  {i}";
                 }
                 else
                 {
-                    Console.Write($" {i}");
+                    numString += $" {i}";
                 }
             }
 
-        Console.ForegroundColor = ConsoleColor.Yellow;
+        
         if (powerBall < 10)
         {
-            Console.Write($"  {powerBall}");
+            numString += $"  [yellow]{powerBall}[/]";
         }
         else
         {
-            Console.Write($" {powerBall}");
+            numString += $" [yellow]{powerBall}[/]";
         }
-        Console.ResetColor();
-        Console.WriteLine();
+        return numString;
     }
 
 }

@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Spectre.Console;
 namespace LotterySimulator
 {
     internal class Game
     {
         public static void PrintUserTickets(List<Roll> tickets)
         {
+            AnsiConsole.WriteLine("Your Tickets");
             for (int i = 0; i < tickets.Count; i++)
             {
-                tickets[i].PrintNums();
+                AnsiConsole.Write(new Markup(tickets[i].PrintNums()));
+                AnsiConsole.WriteLine();
+                // tickets[i].PrintNums();
             }
         }
         public static List<Roll> GetTickets(string num)
@@ -34,10 +37,34 @@ namespace LotterySimulator
         }
         public static void RunSim()
         {
-            Console.WriteLine("How many tickets do you want?");
-            PrintUserTickets(GetTickets(Console.ReadLine()));
+            string ticketsBought = AnsiConsole.Ask<string>("How many tickets do you want?");
+           
+            List<Roll> tickets = GetTickets(ticketsBought);
+            PrintUserTickets(tickets);
 
+            string ticketsPlayed = AnsiConsole.Ask<string>("How many games do you want to play?");
+            for (int i = 0; i < 2; i++)
+            {
+                List<Roll> drawnTickets = GetTickets(ticketsPlayed);
+                foreach (Roll roll in drawnTickets)
+                {
+                    foreach(Roll draw in tickets)
+                    {
+                        CheckNums(draw,roll);
+                    }
+                }
+            }
+            if (!AnsiConsole.Confirm("Play again?"))
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.Clear();
+                RunSim();
+            }
         }
+
         public static void CheckNums(Roll playerPick, Roll lottoDraw)
         {
            
@@ -46,10 +73,9 @@ namespace LotterySimulator
             {
                 powerBallMatch = true;
             }
-            int winningNums = playerPick.baseRoll.Except(lottoDraw.baseRoll).Count();
-            ReportWinnings(winningNums, powerBallMatch)
-            
-                
+            // this is not correctly counting the number of matchs, it's counting unmatched I think
+            int winningNums = 5 - playerPick.baseRoll.Except(lottoDraw.baseRoll).Count();
+            ReportWinnings(winningNums, powerBallMatch);                     
            
 
 
@@ -115,6 +141,10 @@ namespace LotterySimulator
                         break;
                 }
             }
+        }
+        public static void PrintGameScreen()
+        {
+
         }
     }
 }

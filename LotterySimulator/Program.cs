@@ -19,5 +19,6 @@
 // Ask how many tickets each week
 // Ask how many years to simulate
 //
+using Spectre.Console;
 using LotterySimulator;
 Game.RunSim();
