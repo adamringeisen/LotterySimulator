@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LotterySimulator
+﻿namespace LotterySimulator
 {
     public class Result
     {
@@ -41,9 +35,8 @@ namespace LotterySimulator
             Console.WriteLine($"{"$10,000",-10}:{Match4.Phits,10}");
             Console.WriteLine($"{"1,000,000",-10 }:{Match5.Hits,10}");
             Console.WriteLine($"{"Jackpot!",-10}:{Match5.Phits,10}");
-
-
         }
+
         public int GetWinnings()
         {
             return Winings;
@@ -52,49 +45,31 @@ namespace LotterySimulator
         {
 
             switch (numberMatched)
-            { // must check for:
-              // powerball only : $2
-              // one number + powerball : $4
-              // 2 + pb : $10
-              // 3 numbers : $10
-              // 3 + pb : $200
-              // 4 number : $500
-              // 4 + powerball : $10,000
-              // 5 nums : $1,000,000
-              // 5 + powerball : jackpot (must calculate jackpot)
+            { 
                 case 0:
-                    //AnsiConsole.WriteLine("Power Ball Matched! $2");
                     Match0.AddHit(PowerBall);
                     Winings += Match0.GetValue(PowerBall);
                     break;
                 case 1:
-                    //Console.WriteLine("One Number and Powerball Matched $4");
                     Match1.AddHit(PowerBall);
                     Winings += Match1.GetValue(PowerBall);
                     break;
                 case 2:
-                    //Console.WriteLine("Two Numbers and Powerball Matched $10");
                     Match2.AddHit(PowerBall);
                     Winings += Match2.GetValue(PowerBall);
                     break;
                 case 3:
-                    //Console.WriteLine("Three numbers and Powerball Numbers Matched $200");
                     Match3.AddHit(PowerBall);
                     Winings += Match3.GetValue(PowerBall);
                     break;
                 case 4:
-                    //Console.WriteLine("Four Numbers and Powerball Matched! $10,000");
                     Match4.AddHit(PowerBall);
                     Winings += Match4.GetValue(PowerBall);
                     break;
                 case 5:
-                    //Console.WriteLine("Five numbers and Powerball Numbers Matched $Jackpot!");
                     Match5.AddHit(PowerBall);
                     Winings += Match5.GetValue(PowerBall);
                     break;
-
-
-
             }
 
         }
