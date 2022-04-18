@@ -18,31 +18,7 @@
         }
         return list;
     }
-    public string PrintNums()
-    {
-        string numString = "";
-        foreach (int i in baseRoll)
-
-        {
-            if (i < 10)
-            {
-                numString += $"  {i}";
-            }
-            else
-            {
-                numString += $" {i}";
-            }
-        }
-
-        if (powerBall < 10)
-        {
-            numString += $"  [yellow]{powerBall}[/]";
-        }
-        else
-        {
-            numString += $" [yellow]{powerBall}[/]";
-        }
-        return numString;
-    }
+    
+    
 
 }
