@@ -1,4 +1,8 @@
 ﻿
 global using Spectre.Console;
 using LotterySimulator;
-Game.RunSim();
+
+MegaMillions game = new MegaMillions(10, 100);
+game.Play();
+
+

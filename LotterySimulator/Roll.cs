@@ -1,24 +1,15 @@
-﻿class Roll
+﻿
+namespace LotterySimulator
 {
-    public List<int> baseRoll;
-    public int powerBall;
-    public Roll()
+    internal class Roll
     {
-        // Lottery Numbers should be sorted in ascending order
-        baseRoll = GetNums(5, 1, 70).OrderBy(x => x).ToList();
-        powerBall = Global.rand.Next(1, 26);
-    }
-    public static List<int> GetNums(int numberOfNums, int start, int end)
-    {
+        public List<int> BaseRoll { get; set; }
+        public int PowerBall { get; set; }
 
-        List<int> list = new List<int>();
-        for (int i = 0; i < numberOfNums; i++)
+        public Roll(List<int> baseroll, int Powerball)
         {
-            list.Add(Global.rand.Next(start, end));
+            this.BaseRoll = baseroll;
+            this.PowerBall = Powerball;
         }
-        return list;
     }
-    
-    
-
 }
