@@ -2,7 +2,8 @@
 ![Initial screen of application showing logo and options](https://i.imgur.com/qrR3RfX.png)
 ## Description
 
-Simulate playing (losing) the lottery! Here the U.S. multi state lottery game Mega Millions is simulated. You choose how many tickets you want to play (quick-picks, basically) and then how many games you want to play. Then, it plays all the games and tells you how much money you (probably) wasted playing the lottery.
+Simulate playing (losing) the lottery! Here the U.S. multi state lottery games Mega Millions and Power Ball simulated. You choose how many tickets you want to play (quick-picks, basically) and then how many games you want to play. Then, it plays all the games and tells you how much money you (probably) wasted playing the lottery.
+
 
 
 ![Picture of an example lottery simulation](https://i.imgur.com/lD0UnOB.png)
@@ -28,6 +29,9 @@ Second option is how many games you want to play with those tickets. MegaMillion
 - [ ] More Error Checking
 - [ ] Add multiplier roll ($1 extra per ticket)
 - [ ] Implement lesser known national lotteries. 
+
+## Disclaimer
+You can't win (or lose) any real money with this application. Mega Millions and Power Ball are registered trademarks of their respective owners and they are in no way affliated or connected with this application.
 
 ## Change-log
 
