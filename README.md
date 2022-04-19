@@ -1,10 +1,11 @@
 # LotterySimulator
-
+![Initial screen of application showing logo and options](https://i.imgur.com/wmhxPs3.png)
 ## Description
 
 Simulate playing (losing) the lottery! Here the U.S. multi state lottery game Mega Millions is simulated. You choose how many tickets you want to play (quick-picks, basically) and then how many games you want to play. Then, it plays all the games and tells you how much money you (probably) wasted playing the lottery.
 
-![Picture of an example lottery simulation](https://i.imgur.com/hfnOx31.png)
+
+![Picture of an example lottery simulation](https://i.imgur.com/ChJ2gDN.png)
 
 ## Setup and Usage
 
@@ -33,6 +34,6 @@ Second option is how many games you want to play with those tickets. MegaMillion
 1.1.0 Prettier Release
 - Made Prettier.
 - Implemented PowerBall
-- Learned how abstract 
+- Running Totals
 1.0.0 Initial Release
 
