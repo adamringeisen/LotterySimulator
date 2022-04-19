@@ -3,10 +3,10 @@ namespace LotterySimulator
 {
     internal class Roll
     {
-        public List<int> BaseRoll { get; set; }
-        public int PowerBall { get; set; }
+        public List<byte> BaseRoll { get; set; }
+        public byte PowerBall { get; set; }
 
-        public Roll(List<int> baseroll, int Powerball)
+        public Roll(List<byte> baseroll, byte Powerball)
         {
             this.BaseRoll = baseroll;
             this.PowerBall = Powerball;

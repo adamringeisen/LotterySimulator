@@ -12,13 +12,13 @@
             this.PlayerDraws = GetTickets(numberTickets);
             this.GameDraws = GetTickets(numberGames);
         }
-    public static List<int> GetNums(int numberOfNums, int start, int end)
+    public static List<byte> GetNums(int numberOfNums, int start, int end)
         {
 
-            List<int> list = new List<int>();
+            List<byte> list = new List<byte>();
             for (int i = 0; i < numberOfNums; i++)
             {
-                list.Add(Global.rand.Next(start, end));
+                list.Add((byte)Global.rand.Next(start, end));
             }
             return list;
         }

@@ -13,8 +13,8 @@ namespace LotterySimulator
         public override Roll GetSingleDraw()
         {
 
-            List<int> baseRoll = GetNums(5, 1, 70).OrderBy(x => x).ToList();
-            int powerBall = Global.rand.Next(1, 27);
+            List<byte> baseRoll = GetNums(5, 1, 70).OrderBy(x => x).ToList();
+            byte powerBall = (byte)Global.rand.Next(1, 27);
             return new Roll(baseRoll, powerBall);
         }
 
