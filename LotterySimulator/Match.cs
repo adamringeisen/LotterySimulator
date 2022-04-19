@@ -30,13 +30,12 @@
             if (!powerball)
             {
                 Hits++;
-                Console.WriteLine("Hit added no powerball");
-                Console.WriteLine($" Current Hits = {Hits}");
+                
             }
             else
             {
                 Phits++;
-                Console.WriteLine("Hit added powerball");
+                
             }
         }
         public override string ToString()

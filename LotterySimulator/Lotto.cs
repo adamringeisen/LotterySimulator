@@ -76,9 +76,9 @@
                 foreach (Roll draw in PlayerDraws)
                 {
                     CheckNums(draw, roll);
-                    //Console.SetCursorPosition(0, 2);
-                    //PrintResult();
-                    Console.WriteLine($" $0 Hits: {LottoResult.Matches[0].Hits}");
+                    Console.SetCursorPosition(0, 2);
+                    PrintResult();
+                    //Console.WriteLine($" ID: {LottoResult.ID}");
                     Losings += 2;
                 }
             }

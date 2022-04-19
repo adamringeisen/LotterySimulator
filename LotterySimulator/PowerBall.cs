@@ -3,7 +3,7 @@ namespace LotterySimulator
 
     class PowerBall : Lotto
     {
-        public override Result LottoResult => new("MegaMillions");
+        public override Result LottoResult => ResultFactory.PowerBall();
 
 
         public PowerBall(int numberTickets, int numberGames) : base(numberTickets, numberGames)
@@ -35,10 +35,6 @@ namespace LotterySimulator
         }
         public override void Play()
         {
-            foreach (Result result in LottoResult)
-            {
-                Console.WriteLine(result.ToString());
-            }
             Console.CursorVisible = false;
             CheckTickets();
             Console.SetCursorPosition(0, 12);

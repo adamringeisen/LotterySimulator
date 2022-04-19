@@ -17,13 +17,20 @@ namespace LotterySimulator
             }
             else if (format == "PowerBall")
             {
-                Matches.Insert(0, new Match(0, 0,10));
-// start here /\/\/\/\/\
+                Matches = new List<Match>
+                {
+                    new Match(0, 0, 4),
+                    new Match(1, 0, 4),
+                    new Match(2, 0, 7),
+                    new Match(3, 7, 100),
+                    new Match(4, 100, 50_000),
+                    new Match(5, 1_000_000, 150_000_000),
+                };
             
             }
             else if (format == "MegaMillions")
             {
-                Matches = new List<Match>
+               Matches = new List<Match>
                 {
                     new Match(0, 0, 2),
                     new Match(1, 0, 4),
