@@ -5,7 +5,7 @@
 Simulate playing (losing) the lottery! Here the U.S. multi state lottery game Mega Millions is simulated. You choose how many tickets you want to play (quick-picks, basically) and then how many games you want to play. Then, it plays all the games and tells you how much money you (probably) wasted playing the lottery.
 
 
-![Picture of an example lottery simulation](https://i.imgur.com/ChJ2gDN.png)
+![Picture of an example lottery simulation](https://i.imgur.com/lD0UnOB.png)
 
 ## Setup and Usage
 
