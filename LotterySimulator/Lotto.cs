@@ -5,12 +5,22 @@
 
         public List<Roll> PlayerDraws;
         public List<Roll> GameDraws;
+        public int CurrentGames = 0;
+        public int GetTotalGames()
+        {
+            return PlayerDraws.Count*GameDraws.Count;
+        }
         public int Winings { get; set; }
         public int Losings { get; set; }
         public Lotto(int numberTickets, int numberGames)
         {
             this.PlayerDraws = GetTickets(numberTickets);
             this.GameDraws = GetTickets(numberGames);
+        }
+        public Lotto(int[] tickets)
+        {
+            this.PlayerDraws = GetTickets(tickets[0]);
+            this.GameDraws= GetTickets(tickets[1]);
         }
     public static List<byte> GetNums(int numberOfNums, int start, int end)
         {
@@ -71,14 +81,15 @@
 
         public void CheckTickets()
         {
+
             foreach (Roll roll in GameDraws)
             {
                 foreach (Roll draw in PlayerDraws)
                 {
+                    CurrentGames++;
                     CheckNums(draw, roll);
-                    Console.SetCursorPosition(0, 2);
+                    Console.SetCursorPosition(0, 0);
                     PrintResult();
-                    //Console.WriteLine($" ID: {LottoResult.ID}");
                     Losings += 2;
                 }
             }

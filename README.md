@@ -18,9 +18,21 @@ Second option is how many games you want to play with those tickets. MegaMillion
 
 - [X] Implement MegaMillions lottery draw
 - [X] Display running count of the number of each type of wins
-- [ ] Add PowerBall variant
+- [X] Show running total of winning/ticket cost
+- [X] Show running game count / total games
+- [X] Make easier to add variants
+- [X] Add PowerBall variant
+- [X] Make Prettier
+- [ ] Tests
+- [ ] More Error Checking
 - [ ] Add multiplier roll ($1 extra per ticket)
+- [ ] Implement lesser known national lotteries. 
 
 ## Change-log
 
+1.1.0 Prettier Release
+- Made Prettier.
+- Implemented PowerBall
+- Learned how abstract 
 1.0.0 Initial Release
+
