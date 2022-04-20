@@ -88,9 +88,9 @@
                 {
                     CurrentGames++;
                     CheckNums(draw, roll);
+                    Losings += 2;
                     Console.SetCursorPosition(0, 0);
                     PrintResult();
-                    Losings += 2;
                 }
             }
         }
