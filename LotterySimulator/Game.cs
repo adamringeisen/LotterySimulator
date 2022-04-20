@@ -55,6 +55,7 @@ namespace LotterySimulator
         }
         public static int[] TicketSelect()
         {
+            GC.Collect();
             var quickpicks = AnsiConsole.Ask<int>("How many tickets do you want?");
             var games = AnsiConsole.Ask<int>("How many games do you want to play?");
             int[] TicketSelection = new int[] {quickpicks,games};

@@ -7,7 +7,7 @@ namespace LotterySimulator
 
 
 
-        public override Result LottoResult => ResultFactory.MegaMillions();
+        public override Result LottoResult { get; } = new Result("MegaMillions");
 
         public MegaMillions(int numberTickets, int numberGames) : base(numberTickets, numberGames)
         {

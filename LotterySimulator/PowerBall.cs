@@ -3,7 +3,7 @@ namespace LotterySimulator
 
     class PowerBall : Lotto
     {
-        public override Result LottoResult => ResultFactory.PowerBall();
+        public override Result LottoResult { get; } = new Result("PowerBall");
 
 
         public PowerBall(int numberTickets, int numberGames) : base(numberTickets, numberGames)
