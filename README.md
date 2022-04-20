@@ -34,6 +34,11 @@ Second option is how many games you want to play with those tickets. MegaMillion
 You can't win (or lose) any real money with this application. Mega Millions and Power Ball are registered trademarks of their respective owners and they are in no way affliated or connected with this application.
 
 ## Change-log
+1.1.1 Bug fixes
+- Fixed single game not displaying restults properly
+- Fixed multiple consecutive games not resetting results
+
+
 
 1.1.0 Prettier Release
 - Made Prettier.
