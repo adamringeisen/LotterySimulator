@@ -18,10 +18,17 @@ namespace LotterySimulator
             byte powerBall = (byte)Global.rand.Next(1, 27);
             return new Roll(baseRoll, powerBall);
         }
-
-        public int NumHits(int matches)
+        /// <summary>
+        ///  Takes the prize value and returns
+        ///  the number of times that prize has
+        ///  been won.
+        /// </summary>
+        /// <param name="prizes"></param>
+        /// <returns>Number of times a prize has been won</returns>
+        /// <exception cref="Exception"></exception>
+        public int NumHits(int prizes)
         {
-            switch (matches)
+            switch (prizes)
             {
                 case 0:
                     return LottoResult.Matches[0].Hits + LottoResult.Matches[1].Hits + LottoResult.Matches[2].Hits;
@@ -84,45 +91,9 @@ namespace LotterySimulator
                 MainTable.BorderColor(Color.Green);
             }
             AnsiConsole.Write(MainTable);
-            //Console.WriteLine($"Playing {GameDraws.Count} games of PowerBall with {PlayerDraws.Count} tickets");
-            //Console.WriteLine($"{"$0",-10}:{NumHits(0),10}");
-            //Console.WriteLine($"{"$4",-10}:{LottoResult.Matches[0].Phits + LottoResult.Matches[1].Phits,10}");
-            //Console.WriteLine($"{"$7",-10}:{LottoResult.Matches[2].Phits + LottoResult.Matches[3].Hits,10}");
-            //Console.WriteLine($"{"$100",-10}:{LottoResult.Matches[3].Phits + LottoResult.Matches[4].Hits,10}");
-            //Console.WriteLine($"{"$50_000",-10}:{LottoResult.Matches[4].Phits,10}");
-            //Console.WriteLine($"{"1,000,000",-10 }:{LottoResult.Matches[5].Hits,10}");
-            //Console.WriteLine($"{"Jackpot!",-10}:{LottoResult.Matches[5].Phits,10}");
-            //Console.WriteLine($"$ Won {Winings:C2}");
-            //Console.WriteLine($"$ Spent {Losings:C2}");
+            
         }
-        public override void Play()
-        {
-            Console.CursorVisible = false;
-            Console.Clear();
-
-            CheckTickets();
-            AnsiConsole.Write(
-               new FigletText("You")
-               .Centered()
-               .Color(Color.Red));
-            if (Winings < Losings)
-            {
-                AnsiConsole.Write(
-                    new FigletText("Lost!")
-                    .Centered()
-                    .Color(Color.Red3));
-            }
-            else
-            {
-                AnsiConsole.Write(
-                    new FigletText("Won!")
-                    .Centered()
-                    .Color(Color.Green1));
-            }
-            Console.CursorVisible = true;
-
-
-        }
+      
 
 
     }

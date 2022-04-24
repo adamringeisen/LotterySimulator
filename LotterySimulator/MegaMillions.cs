@@ -29,9 +29,17 @@ namespace LotterySimulator
         {
             return LottoResult.Matches[0].Hits + LottoResult.Matches[1].Hits + LottoResult.Matches[2].Hits;
         }
-        public int NumHits(int matches)
+        /// <summary>
+        ///  Takes the prize value and returns
+        ///  the number of times that prize has
+        ///  been won.
+        /// </summary>
+        /// <param name="prizes"></param>
+        /// <returns>Number of times a prize has been won</returns>
+        /// <exception cref="Exception"></exception>
+        public int NumHits(int prizes)
         {
-            switch (matches)
+            switch (prizes)
             {
                 case 0:
                     return LottoResult.Matches[0].Hits + LottoResult.Matches[1].Hits + LottoResult.Matches[2].Hits;
@@ -101,36 +109,6 @@ namespace LotterySimulator
             AnsiConsole.Write(MainTable);
 
         }
-        public override void Play()
-        
-            {
-                Console.CursorVisible = false;
-                Console.Clear();
-
-                CheckTickets();
-                AnsiConsole.Write(
-                   new FigletText("You")
-                   .Centered()
-                   .Color(Color.Red));
-                if (Winings < Losings)
-                {
-                    AnsiConsole.Write(
-                        new FigletText("Lost!")
-                        .Centered()
-                        .Color(Color.Red3));
-                }
-                else
-                {
-                    AnsiConsole.Write(
-                        new FigletText("Won!")
-                        .Centered()
-                        .Color(Color.Green1));
-                }
-                Console.CursorVisible = true;
-
-
-            }
-
     }
 
 }
