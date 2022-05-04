@@ -39,29 +39,19 @@ namespace LotterySimulator
         /// <exception cref="Exception"></exception>
         public int NumHits(int prizes)
         {
-            switch (prizes)
+            return prizes switch
             {
-                case 0:
-                    return LottoResult.Matches[0].Hits + LottoResult.Matches[1].Hits + LottoResult.Matches[2].Hits;
-                case 2:
-                    return LottoResult.Matches[0].Phits;
-                case 4:
-                    return LottoResult.Matches[1].Phits;
-                case 10:
-                    return LottoResult.Matches[2].Phits + LottoResult.Matches[3].Hits;
-                case 200:
-                    return LottoResult.Matches[3].Phits;
-                case 500:
-                    return LottoResult.Matches[4].Hits;
-                case 10_000:
-                    return LottoResult.Matches[4].Phits;
-                case 1_000_000:
-                    return LottoResult.Matches[5].Hits;
-                case -1:
-                    return LottoResult.Matches[5].Phits;
-                default: throw new Exception("Invalid option passed to NumHits method");
-
-            }
+                0 => LottoResult.Matches[0].Hits + LottoResult.Matches[1].Hits + LottoResult.Matches[2].Hits,
+                2 => LottoResult.Matches[0].Phits,
+                4 => LottoResult.Matches[1].Phits,
+                10 => LottoResult.Matches[2].Phits + LottoResult.Matches[3].Hits,
+                200 => LottoResult.Matches[3].Phits,
+                500 => LottoResult.Matches[4].Hits,
+                10_000 => LottoResult.Matches[4].Phits,
+                1_000_000 => LottoResult.Matches[5].Hits,
+                -1 => LottoResult.Matches[5].Phits,
+                _ => throw new Exception("Invalid option passed to NumHits method"),
+            };
         }
 
 

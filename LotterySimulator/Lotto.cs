@@ -2,6 +2,8 @@
 {
     abstract class Lotto     {
         public abstract Result LottoResult { get; }
+        public int Losings { get; set; }
+        public int Winings { get; set; }
 
         public List<Roll> PlayerDraws;
         public List<Roll> GameDraws;
@@ -10,8 +12,6 @@
         {
             return PlayerDraws.Count*GameDraws.Count;
         }
-        public int Winings { get; set; }
-        public int Losings { get; set; }
         public Lotto(int numberTickets, int numberGames)
         {
             this.PlayerDraws = GetTickets(numberTickets);
@@ -31,7 +31,7 @@
         /// <param name="end">End range of numbers in list (exclusive)</param>
         /// <returns>A list of numbers of <c>numberOfNums</c> length where the 
         /// numbers start at <c>start</c> and end at <c>end -1</c></returns>
-    public static List<byte> GetNums(int numberOfNums, int start, int end)
+        public static List<byte> GetNums(int numberOfNums, int start, int end)
         {
 
             List<byte> list = new List<byte>();
@@ -114,10 +114,7 @@
             int winningNums = lottoDraw.BaseRoll.Count - playerPick.BaseRoll.Except(lottoDraw.BaseRoll).Count();
             AddResult(winningNums, powerBallMatch);
         }
-        public int GetWinnings()
-        {
-            return Winings;
-        }
+
         public void Play()
         
             {
